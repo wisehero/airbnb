@@ -31,13 +31,13 @@ class User(AbstractUser):
 
     CURRENCY_CHOICES = ((CURRENCY_USD, "USD"), (CURRENCY_KRW, "KRW"))
 
-    avatar = models.ImageField(null=True, blank=True)
+    avatar = models.ImageField(blank=True)
     gender = models.CharField(choices=GENDER_CHOICES,
-                              max_length=10, null=True, blank=True)  # CharField는 한 줄 입력창
+                              max_length=10, blank=True)  # CharField는 한 줄 입력창
     bio = models.TextField(default="")  # TextField는 여러 줄 입력 창
-    birthdate = models.DateField(null=True)
+    birthdate = models.DateField(blank=True)
     language = models.CharField(
-        choices=LANGUAGE_CHOICES, max_length=2, null=True, blank=True)
+        choices=LANGUAGE_CHOICES, max_length=2, blank=True)
     currency = models.CharField(
-        choices=CURRENCY_CHOICES, max_length=3, null=True, blank=True)
+        choices=CURRENCY_CHOICES, max_length=3, blank=True)
     superhost = models.BooleanField(default=False)
