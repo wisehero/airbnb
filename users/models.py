@@ -31,7 +31,7 @@ class User(AbstractUser):
 
     CURRENCY_CHOICES = ((CURRENCY_USD, "USD"), (CURRENCY_KRW, "KRW"))
 
-    avatar = models.ImageField(blank=True)
+    avatar = models.ImageField(upload_to="avatars", blank=True)
     gender = models.CharField(choices=GENDER_CHOICES,
                               max_length=10, blank=True)  # CharField는 한 줄 입력창
     bio = models.TextField(default="")  # TextField는 여러 줄 입력 창
